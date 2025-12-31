@@ -1,118 +1,89 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swop');
+/* فونت نمایشی برای تیترها */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
+/* ریست اولیه */
 * {
-    margin: 0;
+    margin: 0; /* حذف فاصله پیش‌فرض */
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* محاسبه درست عرض */
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
-.conteiner {
-    background-color: #3047a3;
-    height: 100vh;
-    isolation: isolate;
+body {
+    overflow-x: hidden; /* جلوگیری از اسکرول افقی */
 }
 
+/* کانتینر اصلی */
+.conteiner {
+    background-color: #3047a3; /* رنگ بک‌گراند */
+    min-height: 100vh; /* حداقل ارتفاع کل صفحه */
+    isolation: isolate; /* کنترل لایه‌ها */
+}
+
+/* نوار ناوبری */
 .navbar {
-    height: 13vh;
+    height: 13vh; /* ارتفاع منو */
     width: 90%;
     margin: auto;
-    display: flex;
+    display: flex; /* چیدمان افقی */
     justify-content: space-between;
     align-items: center;
 }
 
+/* لوگو */
+.logo img {
+    height: 60px;
+}
+
+/* لیست منو */
 .navlist {
     display: flex;
 }
 
 .navlist li {
-    list-style: none;
+    list-style: none; /* حذف بولت */
     padding: 20px;
 }
 
+/* لینک‌های منو */
 .navlist a {
     color: white;
-    font-size: 18px;
     text-decoration: none;
-    letter-spacing: 1px;
+    font-size: 18px;
     position: relative;
 }
 
-.logo img {
-    height: 60px;
-}
-
-.click button:nth-child(1),
-.click button:nth-child(2) {
-    padding: 10px 20px;
-    font-size: 18px;
-    border: none;
-    border-radius: 30px;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-/* Login */
-.click button:nth-child(1) {
-    background-color: #f0b033;
-    color: #ffffff;
-    border: 2px solid #f0b033;
-}
-
-.click button:nth-child(1):hover {
-    background-color: transparent;
-    color: #f0b033;
-}
-
-/* Sign Up */
-.click button:nth-child(2) {
-    background-color: transparent;
-    color: #f0b033;
-    border: 2px solid #f0b033;
-    margin-left: 20px;
-}
-
-.click button:nth-child(2):hover {
-    background-color: #f0b033;
-    color: white;
-}
-
-
+/* خط زیر لینک */
 .navlist a::before {
     content: "";
-    background-color: rgb(255, 242, 0);
     width: 0;
     height: 3px;
+    background: yellow;
     position: absolute;
     bottom: -10px;
-    border-radius: 10px;
-    transition: .5s ease-in-out;
+    transition: 0.4s;
 }
 
-.navlist a:hover::before {
-    width: 50%;
-}
-
+/* هاور و لینک فعال */
+.navlist a:hover::before,
 .navlist .active::before {
-    content: "";
-    background-color: rgb(255, 242, 0);
     width: 50%;
-    height: 3px;
-    position: absolute;
-    bottom: -10px;
-    border-radius: 10px;
 }
 
+/* دکمه‌ها */
+.click button {
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* دایره تزئینی */
 .circle {
     width: 650px;
     height: 650px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.14);
-    border: 1px solid rgba(255, 255, 255, 0.44);
+    background: rgba(255,255,255,0.14);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -120,75 +91,43 @@
     z-index: -1;
 }
 
+/* تصویر داخل دایره */
 .circle::before {
     content: "";
     width: 450px;
     height: 450px;
+    background: url(img/farm.jpg) center/cover;
     position: absolute;
+    border-radius: 50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background-image: url(img/farm.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
-.circle::after {
-    content: "";
-    width: 480px;
-    height: 480px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.14);
-    backdrop-filter: blur(3px);
-}
-
+/* بخش hero */
 .hero {
-    width: 50%;
+    width: 100%;
     height: 87vh;
     display: flex;
     align-items: center;
-    padding-left: 50px;
+    padding: 0 50px;
 }
 
+/* تیتر */
 .content h1 {
     font-size: 58px;
     color: white;
-    font-family: "fredoka One", cursive;
-    letter-spacing: 2px;
-    line-height: 100px;
-
+    font-family: 'Fredoka One', cursive;
 }
 
+/* متن */
 .content p {
-    font-size: 18px;
-    letter-spacing: 1px;
     color: white;
     max-width: 60%;
-    line-height: 30px;
-    padding: 30px 0px 50px 0px;
+    padding: 30px 0;
 }
 
-.content button {
-    padding: 20px 30px;
-    background: #ffd470;
-    background: linear-gradient(90deg, rgba(255, 212, 112, 1) 20%, rgba(255, 179, 0, 1) 53%, rgba(224, 157, 0, 1) 95%);
-    border: none;
-    font-size: 18px;
-    color: white;
-    font-weight: bold;
-}
-
-.content button:hover {
-    cursor: pointer;
-    background: linear-gradient(to left, #f0b033, #ec9620);
-}
-
+/* کاراکتر اصلی */
 .main-character img {
     height: 560px;
     position: absolute;
@@ -197,33 +136,16 @@
     transform: translate(-50%, -50%);
 }
 
+/* کاراکترهای فرعی */
 .character {
     position: absolute;
-    top: 120px;
     right: 100px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-
-}
-
-.character h2 {
+    top: 120px;
     color: white;
-    letter-spacing: 2px;
-    font-family: "fredoka One", cursive;
-    font-size: 25px;
-
 }
 
 .fiters {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    align-items: center;
-    justify-content: center;
-}
-
-.fiters img {
-    height: 120px;
-
+    gap: 20px;
 }

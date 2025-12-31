@@ -1,0 +1,73 @@
+/* ================== RESPONSIVE ================== */
+
+/* 📱 موبایل */
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column; /* منو ستونی */
+        height: auto;
+    }
+
+    .hero {
+        flex-direction: column; /* hero ستونی */
+        height: auto;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .content h1 {
+        font-size: 36px; /* کوچک شدن تیتر */
+    }
+
+    .content p {
+        max-width: 100%; /* متن تمام عرض */
+    }
+
+    .main-character img {
+        position: static; /* حذف absolute */
+        transform: none;
+        height: 280px; /* کوچک شدن تصویر */
+        margin: 20px 0;
+    }
+
+    .fiters {
+        flex-direction: row; /* تصاویر کنار هم */
+    }
+
+    .fiters img {
+        height: 80px;
+    }
+
+    .circle {
+        width: 320px;
+        height: 320px;
+    }
+}
+
+/* 📲 تبلت */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .content h1 {
+        font-size: 46px; /* اندازه متوسط */
+    }
+
+    .main-character img {
+        height: 420px;
+    }
+
+    .character {
+        right: 30px;
+    }
+}
+
+/* 💻 لپ‌تاپ */
+@media (min-width: 1025px) and (max-width: 1366px) {
+
+    .content h1 {
+        font-size: 52px;
+    }
+
+    .main-character img {
+        height: 500px;
+    }
+}
